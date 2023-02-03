@@ -9,7 +9,7 @@ for folder in "${folders[@]}"; do
 
   pdfs=($(find "${folder}" -type f -name "*.pdf" | sort))
   for pdf in "${pdfs[@]}"; do
-      printf "\t* [%s](%s)\n" "$(basename "${pdf}")" "$(realpath --relative-to="${PWD}" "${pdf}")" >> README.md
+      printf "    * [%s](%s)\n" "$(basename "${pdf}")" "$(realpath --relative-to="${PWD}" "${pdf}")" >> README.md
   done
 done
 
